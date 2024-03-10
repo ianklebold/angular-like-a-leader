@@ -1,0 +1,155 @@
+<h1 class="mt3">Pipes <small>Angular</small> </h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+      <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th> Variable </th>
+              <th> Pipe </th>
+              <th> Salida </th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td> {{ nombre }} </td>
+              <td> uppercase </td>
+              <td> {{nombre | uppercase}} </td>
+            </tr>
+
+            <tr>
+              <td> {{ nombre }} </td>
+              <td> lowercase </td>
+              <td> {{nombre | lowercase}} </td>
+            </tr>
+
+<!-- ### SLICE ### -->
+<!-- Slice corta a partir del 0  -->
+            <tr>
+              <td> {{ nombre }} </td>
+              <td> slice:3 Corta a partir del 3 caracter</td>
+              <td> {{nombre | slice:3}} </td>
+            </tr>
+
+            <tr>
+              <td> {{ nombre }} </td>
+              <td> slice:0:3 Corta a partir del 0 hasta el 3 caracter</td>
+              <td> {{nombre | slice:0:3}} </td>
+            </tr>
+
+<!-- ### DECIMAL ### -->
+            <tr>
+              <td> {{ PI }} </td>
+              <td> number Para indicar que queremos redondear</td>
+              <td> {{PI | number}} </td>
+            </tr>
+
+            <tr>
+              <td> {{ PI }} </td>
+              <td> number:'1.0-0' Para indicar que no queremos decimales</td>
+              <td> {{PI | number:'1.0-0'}} </td>
+            </tr>
+
+            <tr>
+              <td> {{ PI }} </td>
+              <td> number:'.0-2' Para indicar que queremos hasta 2 decimales y redondee</td>
+              <td> {{PI | number:'.0-2'}} </td>
+            </tr>
+
+<!-- ### PERCENT ### -->
+            <tr>
+              <td> {{ porcentaje }} </td>
+              <td> percent Me lo convierte en porcentaje</td>
+              <td> {{porcentaje | percent}} </td>
+            </tr>
+
+            <tr>
+              <td> {{ porcentaje }} </td>
+              <td> percent Me lo convierte en porcentaje con dos decimales</td>
+              <td> {{porcentaje | percent:'2.2-2'}} </td>
+            </tr>
+
+<!-- ### CURRENCY ### -->
+            <tr>
+              <td> {{ salario }} </td>
+              <td> currency </td>
+              <td> {{salario | currency}} </td>
+            </tr>
+
+            <tr>
+              <td> {{ salario }} </td>
+              <td> currency:'EUR' a partir del codigo podemos configurar la moneda</td>
+              <td> {{salario | currency:'EUR'}} </td>
+            </tr>
+
+            <tr>
+              <td> {{ salario }} </td>
+              <td> currency:'CAD':'symbol':'.0-0' con codigo de canada y sin decimal</td>
+              <td> {{salario | currency:'CAD':'symbol':'.0-0'}} </td>
+            </tr>
+
+<!-- ### ASYNC ### -->
+            <tr>
+              <td> {{ valorPromesa }} </td>
+              <td> async Lo que hace es devolver el resultado de una promesa </td>
+              <td> {{valorPromesa | async }} </td>
+            </tr>
+
+<!-- ### FECHA ### -->
+            <tr>
+              <td> {{ fecha }} </td>
+              <td> date Version corta de la fecha</td>
+              <td> {{fecha | date }} </td>
+            </tr>
+
+            <tr>
+              <td> {{ fecha }} </td>
+              <td> date Version medium de la fecha 'MMM d, y, h:mm:ss a</td>
+              <td> {{fecha | date:'medium' }} </td>
+            </tr>
+
+            <tr>
+              <td> {{ fecha }} </td>
+              <td> date Version short de la fecha 'MMM d, y, h:mm a</td>
+              <td> {{fecha | date:'short' }} </td>
+            </tr>
+
+            <tr>
+              <td> {{ fecha }} </td>
+              <td> date Version personalizada</td>
+              <td> {{fecha | date:'MMMM - dd' }} </td>
+            </tr>
+<!-- ### PIPES PERSONALIZADOS ### -->
+            <tr>
+              <td> {{ nombre2 }} </td>
+              <td> nombre2 Pipe custom</td>
+              <td> {{nombre2 | pipeCustom:true }} </td>
+            </tr>
+
+
+<!-- ### JSON ### -->
+            <h3>JSON </h3>
+            <hr class="row mb-5">
+            <div class="col">
+              {{heroe | json}}
+            </div>
+
+<!-- ### DOM seguro ### -->
+            <h3 class="mt-4">DOM SEGURO</h3>
+            <hr>
+            <div class="row mb-5">
+              <div class="col">
+                <iframe width="560" height="315" [src]="videoUrl | domSeguro"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+              </div>
+            </div>
+          </tbody>
+      </table>
+  </div>
+
+</div>
