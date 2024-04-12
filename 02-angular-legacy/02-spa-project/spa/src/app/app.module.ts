@@ -18,23 +18,26 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    HomeComponent,
-    AboutComponent,
-    HeroesComponent,
-    HeroeComponent,
-    BuscadorComponent,
-    TarjetaComponent
-  ],
-  imports: [
-    BrowserModule,
-    APP_ROUTING
-  ],
-  providers: [
-    HeroesService
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        HomeComponent,
+        AboutComponent,
+        HeroesComponent,
+        HeroeComponent,
+        BuscadorComponent,
+        TarjetaComponent
+    ],
+    imports: [
+        BrowserModule,
+        APP_ROUTING
+    ],
+    providers: [
+        HeroesService
+    ],
+    exports: [
+        NavbarComponent
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
